@@ -1,0 +1,98 @@
+body {
+	display: grid;
+	/* grid-template-columns: 200px 200px 200px 200px 200px; */
+	/* grid-template-columns: repeat(5, 200px); */
+	/* grid-template-columns: repeat(5, 20%); */
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: 100px 1fr 50px;
+	height: 100vh;
+	grid-template-areas:
+		'header 	header 	header 	header 	header'
+		'content 	content content content content'
+		'footer 	footer 	footer 	footer 	footer';
+}
+
+header {
+	/* grid-column-start: 1;
+	grid-column-end: -1; */
+	/* grid-column: 1 / -1; */
+	grid-area: header;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav ul {
+	display: flex;
+}
+
+main {
+	/* grid-column: 1 / -1; */
+	grid-area: content;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+section.speakers {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 200px);
+	/* grid-column-gap: 20px; */
+	/* grid-row-gap: 20px; */
+	grid-gap: 20px;
+}
+
+section.speakers h2 {
+	grid-column: 1 / -1;
+}
+
+footer {
+	/* grid-column: 1 / -1; */
+	grid-area: footer;
+}
+
+article.content {
+	grid-column: 2 / -1;
+	display: grid;
+	grid-template-columns: 1fr 200px;
+	grid-template-rows: auto 1fr;
+	grid-template-areas: 
+		'header sidebar'
+		'bio	sidebar';
+	grid-column-gap: 50px;
+}
+
+article.content .bio {
+	grid-area: bio;
+}
+
+article.content aside {
+	grid-area: sidebar;
+}
+
+main.speakers {
+	grid-template-columns: repeat(auto-fill, 200px);
+	grid-gap: 20px;
+}
+
+main.listing h1 {
+	grid-column: 1 / -1;
+}
+
+main.talks {
+	grid-template-columns: 1fr 1fr;
+	/* grid-column-gap: 20px; */
+	column-gap: 20px;
+}
+
+.content .bio img {
+	float: left;
+	margin-right: 20px;
+}
+
+.content .bio {
+	clear: both;
+}
+
+aside .speakers img {
+	float: left;
+}
